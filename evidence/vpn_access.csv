@@ -1,6 +1,0 @@
-ip_address,classification,approved
-10.20.5.14,internal,yes
-10.20.5.22,internal,yes
-10.20.5.31,internal,yes
-185.77.22.91,external,no
-203.0.113.24,external,yes
