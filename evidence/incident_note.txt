@@ -1,0 +1,10 @@
+INCIDENT NOTE
+-------------
+A security analyst reported suspicious access to finance-related files.
+The team has not yet confirmed whether data left the environment.
+
+Your task:
+Correlate the authentication log, account directory, and VPN list.
+Identify the strongest evidence of unauthorized account use.
+
+Do not overclaim what the evidence proves.
