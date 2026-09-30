@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cyber Sail Warm-Up #1 — Incident Zero</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#0d1117;color:#e6edf3;margin:0}
+header{padding:28px 32px;border-bottom:1px solid #30363d;background:#161b22}
+main{max-width:1000px;margin:auto;padding:28px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px;margin:18px 0}
+h1,h2{margin-top:0}
+.badge{display:inline-block;padding:4px 9px;border:1px solid #30363d;border-radius:999px;margin-right:8px}
+input{width:100%;max-width:620px;padding:10px;border-radius:8px;border:1px solid #30363d;background:#0d1117;color:#fff}
+button{margin-top:10px;padding:9px 14px;border-radius:8px;border:0;cursor:pointer}
+pre{white-space:pre-wrap;background:#0d1117;padding:12px;border-radius:8px;overflow:auto}
+small{color:#8b949e}
+.ok{color:#3fb950} .bad{color:#f85149}
+a{color:#58a6ff}
+</style>
+</head>
+<body>
+<header>
+<h1>Cyber Sail Warm-Up #1: Incident Zero</h1>
+<p>Northstar Systems detected suspicious activity overnight. Recover all three flags before time expires.</p>
+<span class="badge">20 minutes</span><span class="badge">700 points</span><span class="badge">Team or Solo</span>
+</header>
+<main>
+<div class="card">
+<h2>Rules</h2>
+<p>You may use browser developer tools, CyberChef, Wireshark, PowerShell, terminal utilities, or any other non-destructive analysis tool.</p>
+<p><strong>Goal:</strong> explain what happened, not just guess a flag.</p>
+</div>
+
+<div class="card">
+<h2>Easy — Hidden in Plain Sight <small>100 pts · target 3–4 min</small></h2>
+<p>A developer says the public status page was updated before the incident. Something was accidentally left behind.</p>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>What technique did you use to inspect the page?</li>
+<li>Using the flag format in the Incident Note, what final flag did you derive?</li>
+</ol>
+<input id="f1" placeholder="FLAG{...}">
+<button onclick="check('f1','FLAG{VIEW_THE_SOURCE}','r1')">Submit Flag</button>
+<p id="r1"></p>
+<!-- FLAG{VIEW_THE_SOURCE} -->
+</div>
+
+<div class="card">
+<h2>Medium — Layered Message <small>200 pts · target 4–5 min</small></h2>
+<p>An analyst recovered the value below. It has been transformed more than once. Your job is to follow the transformation chain.</p>
+<pre>TkVYVD1ST1QxMwpQQVlMT0FEPVNZTlR7UUJIT1lSX0dFTkFGU0JFWn0=</pre>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>What encoding is used on the value shown above?</li>
+<li>After the first decode, what transformation does the message tell you to use next?</li>
+<li>Apply that transformation to the PAYLOAD. What final flag do you recover?</li>
+</ol>
+<input id="f2" placeholder="FLAG{...}">
+<button onclick="checkHash('f2','7b26a1705c2ee17162a1d64b7e9306dda5d8562e3803eaf67a2a6c65ce995c8c','r2')">Submit Flag</button>
+<p id="r2"></p>
+<details><summary>Hint 1 (-25 pts)</summary><p>The outer value is a common encoding frequently recognized by CyberChef's Magic operation.</p></details>
+<details><summary>Hint 2 (-50 pts)</summary><p>After the first decode, read the result literally — it tells you what transformation to use next.</p></details>
+</div>
+
+<div class="card">
+<h2>Hard — Impossible Login <small>400 pts · target 7–10 min</small></h2>
+<p>Northstar Systems detected suspicious access to finance-related files. Your job is to identify the strongest evidence of unauthorized account use.</p>
+<p>
+<a href="evidence/auth.log">Authentication & File Access Log</a> ·
+<a href="evidence/employee_directory.txt">Account Directory</a> ·
+<a href="evidence/vpn_access.csv">VPN/IP List</a> ·
+<a href="evidence/incident_note.txt">Incident Note / Investigation Guide</a>
+</p>
+<p><strong>Start with the Incident Note.</strong> It gives you the fastest investigation order.</p>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>Which account made the most concerning <strong>successful</strong> login?</li>
+<li>What source IP was used?</li>
+<li>According to the VPN/IP list, was that source approved?</li>
+<li>What status does the Account Directory show for that account?</li>
+<li>Which three files were accessed shortly after the successful login?</li>
+<li>Identify one event that looks suspicious but does <em>not</em> prove a successful compromise.</li>
+<li>What should IT do first with the suspicious account?
+<ul>
+<li>A. Leave it active and monitor it</li>
+<li>B. Disable/revoke the account and reset its credentials</li>
+<li>C. Delete the logs</li>
+<li>D. Restart the server</li>
+</ul>
+</li>
+<li>Using the <strong>FINAL FLAG FORMAT</strong> in the Incident Note, build the flag from the suspicious account name and its status.</li>
+</ol>
+<input id="f3" placeholder="FLAG{...}">
+<button onclick="checkHash('f3','1dc50b316333612603703a224cdda148487d0826c31305c7a293a6d898372095','r3')">Submit Final Flag</button>
+<p id="r3"></p>
+<details><summary>Hint 1 (-25 pts)</summary><p>Ignore failed logins at first. Focus on successful authentication from an external source.</p></details>
+<details><summary>Hint 2 (-50 pts)</summary><p>There are two unapproved external IPs, but only one successfully authenticates.</p></details>
+<details><summary>Hint 3 (-75 pts)</summary><p>The suspicious account is listed as DISABLED in the Account Directory.</p></details>
+</div>
+
+<div class="card">
+<h2>Final Debrief</h2>
+<p>In one or two sentences, explain the incident using evidence from at least two different artifacts. State what the evidence supports and what it does not prove.</p>
+<textarea style="width:100%;min-height:90px;background:#0d1117;color:white;border:1px solid #30363d;border-radius:8px"></textarea>
+</div>
+</main>
+<script>
+function check(id,expected,out){
+ const v=document.getElementById(id).value.trim();
+ const el=document.getElementById(out);
+ if(v===expected){el.textContent='Correct.';el.className='ok';}
+ else {el.textContent='Not quite. Re-check your evidence.';el.className='bad';}
+}
+async function checkHash(id,expectedHash,out){
+ const v=document.getElementById(id).value.trim();
+ const data=new TextEncoder().encode(v);
+ const digest=await crypto.subtle.digest('SHA-256',data);
+ const hash=Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,'0')).join('');
+ const el=document.getElementById(out);
+ if(hash===expectedHash){el.textContent='Correct.';el.className='ok';}
+ else {el.textContent='Not quite. Re-check your evidence.';el.className='bad';}
+}
+</script>
+</body>
+</html>

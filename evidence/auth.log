@@ -1,0 +1,30 @@
+NORTHSTAR SYSTEMS AUTHENTICATION & FILE ACCESS LOG
+==================================================
+
+2026-09-29 08:02:11 LOGIN_SUCCESS user=jcarter src=10.20.5.14 method=password
+2026-09-29 08:14:29 LOGIN_SUCCESS user=mreed src=10.20.5.22 method=mfa
+2026-09-29 08:31:04 LOGIN_FAILED  user=lsantos src=10.20.5.19 method=password
+2026-09-29 08:31:19 LOGIN_SUCCESS user=lsantos src=10.20.5.19 method=password
+2026-09-29 08:46:33 FILE_ACCESS   user=jcarter src=10.20.5.14 file=dev_notes.txt action=read
+2026-09-29 09:04:17 LOGIN_SUCCESS user=aortiz src=203.0.113.24 method=mfa
+2026-09-29 09:14:08 FILE_ACCESS   user=aortiz src=203.0.113.24 file=server_inventory.csv action=read
+2026-09-29 09:18:52 LOGIN_SUCCESS user=build_runner src=10.20.5.40 method=token
+2026-09-29 09:20:02 FILE_ACCESS   user=build_runner src=10.20.5.40 file=build_manifest.json action=read
+
+2026-09-29 10:21:47 LOGIN_FAILED  user=svc_reports src=185.77.22.91 method=password
+2026-09-29 10:22:01 LOGIN_FAILED  user=svc_reports src=185.77.22.91 method=password
+2026-09-29 10:22:16 LOGIN_SUCCESS user=svc_reports src=185.77.22.91 method=password
+2026-09-29 10:24:09 FILE_ACCESS   user=svc_reports src=185.77.22.91 file=finance_q3.xlsx action=read
+2026-09-29 10:24:44 FILE_ACCESS   user=svc_reports src=185.77.22.91 file=board_notes.txt action=read
+2026-09-29 10:25:18 FILE_ACCESS   user=svc_reports src=185.77.22.91 file=employee_roster.csv action=read
+
+2026-09-29 10:39:03 LOGIN_SUCCESS user=build_runner src=10.20.5.40 method=token
+2026-09-29 10:54:26 LOGIN_FAILED  user=mreed src=10.20.5.22 method=password
+2026-09-29 10:54:42 LOGIN_SUCCESS user=mreed src=10.20.5.22 method=mfa
+2026-09-29 11:02:19 LOGIN_FAILED  user=jcarter src=198.51.100.55 method=password
+2026-09-29 11:02:35 LOGIN_FAILED  user=jcarter src=198.51.100.55 method=password
+2026-09-29 11:03:07 LOGIN_FAILED  user=jcarter src=198.51.100.55 method=password
+2026-09-29 11:14:55 LOGIN_SUCCESS user=mreed src=10.20.5.22 method=mfa
+2026-09-29 11:21:44 FILE_ACCESS   user=lsantos src=10.20.5.19 file=training_schedule.pdf action=read
+2026-09-29 11:48:31 LOGIN_SUCCESS user=aortiz src=203.0.113.24 method=mfa
+2026-09-29 12:05:19 FILE_ACCESS   user=aortiz src=203.0.113.24 file=patch_report.csv action=read

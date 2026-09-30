@@ -1,0 +1,8 @@
+ip_address,classification,approved,owner_or_note
+10.20.5.14,internal,yes,Corporate workstation
+10.20.5.19,internal,yes,Corporate workstation
+10.20.5.22,internal,yes,Corporate workstation
+10.20.5.40,internal,yes,Build automation host
+203.0.113.24,external,yes,aortiz approved admin VPN
+185.77.22.91,external,no,Unknown source
+198.51.100.55,external,no,Unknown source

@@ -1,0 +1,42 @@
+INCIDENT NOTE
+=============
+Northstar Systems reported suspicious access to finance-related files.
+
+IMPORTANT CONTEXT
+-----------------
+- Failed login attempts alone do NOT prove compromise.
+- One external IP in the evidence is a legitimate approved admin VPN address.
+- The evidence does NOT prove that any files were successfully exfiltrated.
+
+FAST INVESTIGATION PATH
+-----------------------
+STEP 1 — Open auth.log.
+Find a LOGIN_SUCCESS event that came from an external-looking IP address.
+
+STEP 2 — Check that source IP in vpn_access.csv.
+Determine whether it was approved or unapproved.
+
+STEP 3 — Check that username in employee_directory.txt.
+Determine whether the account should have been active.
+
+STEP 4 — Return to auth.log.
+Look at the events immediately after that successful login and record the files accessed.
+
+STEP 5 — Find one red herring.
+Identify something that looks suspicious but does NOT prove a successful compromise.
+
+CONTAINMENT CLUE
+----------------
+Once you identify an account that should not be active, the first goal is to stop it from being used again.
+
+FINAL FLAG FORMAT
+-----------------
+Use the suspicious account name and its status:
+
+FLAG{<ACCOUNT>_<STATUS>}
+
+Use uppercase letters.
+
+Example:
+If the suspicious account were test_user and its status were ACTIVE:
+FLAG{TEST_USER_ACTIVE}
