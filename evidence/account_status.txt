@@ -1,0 +1,7 @@
+NORTHSTAR SYSTEMS - ACCOUNT STATUS
+===================================
+jcarter         Active      Junior Developer
+mreed           Active      Security Analyst
+svc_backup      DISABLED    Legacy backup service - retirement approved 2025-11-14
+aortiz          Active      Systems Administrator
+build_runner    Active      CI/CD service account

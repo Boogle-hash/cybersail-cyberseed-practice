@@ -1,0 +1,9 @@
+INCIDENT NOTE
+-------------
+SOC alert time: 02:17 AM
+Concern: unusual outbound DNS activity from an internal workstation.
+Known internal DNS server: 10.20.0.53
+
+Analyst note:
+Most overnight traffic is normal automated activity.
+Focus on traffic that looks structurally unusual rather than simply late-night.
